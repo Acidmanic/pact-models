@@ -25,20 +25,19 @@ package com.acidmanic.pactmodels;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  *
  * @author Mani Moayedi (acidmanic.moayedi@gmail.com)
  */
 public class Response {
-    
-    
-    
+
     private int status;
-    
-    private Object body;
-    
-    private HashMap<String,String> headers;
+
+    private LinkedHashMap body;
+
+    private HashMap<String, String> headers;
 
     public Response() {
     }
@@ -51,14 +50,6 @@ public class Response {
         this.status = status;
     }
 
-    public String getBody() {
-        return body==null?null:body.toString();
-    }
-
-    public void setBody(JsonNode body) {
-        this.body = body;
-    }
-
     public HashMap<String, String> getHeaders() {
         return headers;
     }
@@ -66,8 +57,13 @@ public class Response {
     public void setHeaders(HashMap<String, String> headers) {
         this.headers = headers;
     }
-    
-    
-    
-    
+
+    public LinkedHashMap getBody() {
+        return body;
+    }
+
+    public void setBody(LinkedHashMap body) {
+        this.body = body;
+    }
+
 }

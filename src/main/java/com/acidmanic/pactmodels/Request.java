@@ -23,9 +23,9 @@
  */
 package com.acidmanic.pactmodels;
 
-import com.fasterxml.jackson.annotation.JsonRawValue;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  *
@@ -35,7 +35,7 @@ public class Request {
 
     private String method;
     private String path;
-    private Object body;
+    private LinkedHashMap body;
 
     private HashMap<String, String> headers;
 
@@ -66,12 +66,13 @@ public class Request {
         this.headers = headers;
     }
 
-    public String getBody() {
-        return body==null?null:this.body.toString();
+    public LinkedHashMap getBody() {
+        return body;
     }
 
-    public void setBody(JsonNode body) {
+    public void setBody(LinkedHashMap body) {
         this.body = body;
     }
 
+    
 }
