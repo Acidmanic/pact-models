@@ -23,7 +23,6 @@
  */
 package com.acidmanic.pactmodels;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
@@ -36,6 +35,7 @@ public class Response {
     private int status;
 
     private LinkedHashMap body;
+    private HashMap<String,MatchingRule> matchingRules;
 
     private HashMap<String, String> headers;
 
@@ -64,6 +64,14 @@ public class Response {
 
     public void setBody(LinkedHashMap body) {
         this.body = body;
+    }
+
+    public HashMap<String, MatchingRule> getMatchingRules() {
+        return matchingRules;
+    }
+
+    public void setMatchingRules(HashMap<String, MatchingRule> matchingRules) {
+        this.matchingRules = matchingRules;
     }
 
 }
