@@ -36,6 +36,8 @@ public class Request {
     private String method;
     private String path;
     private LinkedHashMap body;
+    private HashMap<String, MatchingRule> matchingRules;
+    private String query;
 
     private HashMap<String, String> headers;
 
@@ -74,5 +76,20 @@ public class Request {
         this.body = body;
     }
 
-    
+    public HashMap<String, MatchingRule> getMatchingRules() {
+        return matchingRules;
+    }
+
+    public void setMatchingRules(HashMap<String, MatchingRule> matchingRules) {
+        this.matchingRules = matchingRules;
+    }
+
+    public String getQuery() {
+        return query;
+    }
+
+    public void setQuery(String query) {
+        this.query = query;
+    }
+
 }
